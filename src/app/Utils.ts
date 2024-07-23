@@ -1,9 +1,9 @@
 
 export class StringUtils{
     public toUpperCase(arg: string){
-        /*if(!arg){
+        if(!arg){
             throw new Error("invalid argument!")
-        }*/
+        }
         return toUpperCase(arg)
     }
 }
@@ -21,6 +21,7 @@ export type StringInfo = {
     extraInfo: Object | undefined 
 }
 
+/* istanbul ignore next */
 export function getStringInfo(arg: string): StringInfo{
     return{
         lowerCase: arg.toLowerCase(),
