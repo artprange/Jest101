@@ -35,7 +35,7 @@ describe('Utils test suite', ()=>{
 
     })*/
 
-    describe.only('getStringInfo for arg My-string should', ()=>{
+    describe('getStringInfo for arg My-string should', ()=>{
         test('return right length', ()=>{
             const actual = getStringInfo('My-string')
             expect(actual.characters).toHaveLength(9)
@@ -66,6 +66,27 @@ describe('Utils test suite', ()=>{
         test('return defined extra info', ()=>{
             const actual = getStringInfo('My-string')
             expect(actual.extraInfo).toEqual({})
+        })
+    })
+
+
+    describe.only('toUpperCase examples', ()=>{
+        it.each([
+            {
+                input:'abc',
+                expected: 'ABC'
+            },
+            {
+                input:'My-string',
+                expected: 'MY-STRING'
+            },
+            {
+                input: 'def',
+                expected: 'DEF'
+            }
+        ])('$input toUpperCase should be $expected', ({input, expected})=>{
+            const actual = toUpperCase(input)
+            expect(actual).toBe(expected)
         })
     })
 
